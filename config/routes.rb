@@ -1,5 +1,7 @@
 Rainforest::Application.routes.draw do
   
+  get "users/new"
+  get "users/create"
   root 'products#index'
 
   resources :products
