@@ -1,6 +1,6 @@
 <h1>Products List</h1>
 <p>A list of all the products</p>
-<table>
+<table id='list_of_products'>
 	<thead>
 		<tr>
 			<th>#ID</th>
@@ -13,7 +13,7 @@
 		<% @products.each do |p| %>
 		<tr>
 			<th><%=p.id%></th>
-			<th><%=p.name%></th>
+			<th><a href="/products/<%=p.id%>"><%=p.name%></a></th>
 			<th><%=p.description%></th>
 			<th><%=p.price_in_cents%></th>
 		</tr>
