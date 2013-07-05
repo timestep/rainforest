@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to products_url, :notice => "FIGHT!"
   	else
+  		flash.now[:alert] = "wrong email or password, fix it"
   		render "new"
   	end
-
   end
 
   def destroy
