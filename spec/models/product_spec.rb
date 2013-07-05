@@ -6,7 +6,7 @@ describe Product do
 		description: "best thing since sliced bread",
 		price_in_cents: 1000000) }
 
-  subject{ @product }
+  subject( :product ){@product}
   
   it 'checks valid description' do
   	should respond_to(:description)
@@ -14,7 +14,7 @@ describe Product do
 	end
 	
 	it 'checks if price is valid' do
-  	# should be_a(Integer)
+  	product.price_in_cents.should be_a(Integer)
 	  should respond_to(:price_in_cents)
 	end
 
