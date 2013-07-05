@@ -39,4 +39,11 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
   	@product.destroy
   end
+
+  private
+
+  def person_params
+  	params.require(:product).permit!
+  end
+
 end
