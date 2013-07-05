@@ -14,8 +14,8 @@ describe Product do
 	end
 	
 	it 'checks if price is valid' do
-  	should be_a(Integer)
-	  # should respond_to(:price_in_cents)
+  	# should be_a(Integer)
+	  should respond_to(:price_in_cents)
 	end
 
 	it 'checks if has name' do
