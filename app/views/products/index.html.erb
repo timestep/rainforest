@@ -1,5 +1,6 @@
 <h1>Products List</h1>
 <p>A list of all the products</p>
+<a href="/products/new">Add a New Product!</a>
 <table id='list_of_products'>
 	<thead>
 		<tr>
@@ -7,6 +8,7 @@
 			<th>Name</th>
 			<th>Description</th>
 			<th>Price</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,6 +18,7 @@
 			<th><a href="/products/<%=p.id%>"><%=p.name%></a></th>
 			<th><%=p.description%></th>
 			<th><%=p.formatted_price%></th>
+			<th><a href="/products/<%=p.id%>/edit">Edit</a></th>
 		</tr>
 		<% end %>
 	</tbody>
