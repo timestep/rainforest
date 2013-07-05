@@ -1,8 +1,13 @@
 Rainforest::Application.routes.draw do
+  
+  root 'products#index'
+
   get "products/index"
   get "products/show"
   get "products/new"
   get "products/edit"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
