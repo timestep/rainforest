@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if current_user
-      @review = @product.reviews.build
+      @review = @product.reviews
     end
 
     respond_to do |format|
@@ -53,12 +53,6 @@ class ProductsController < ApplicationController
 
   def update
   	@product = Product.find(params[:id])
-
-  	if @product.update_attributes(product_params)
-  		redirect_to product_path(@product)
-  	else
-  		render	:edit
-  	end
 
     respond_to do |format|
       if @product.update_attributes(product_params)
