@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @product = Product.find(params[:id])
 
     if current_user
@@ -19,13 +18,9 @@ class ProductsController < ApplicationController
     end
 
     respond_to do |format|
-=======
-  	@product = Product.find(params[:id])
-    
-      respond_to do |format|
->>>>>>> master
-      format.html # show.html.erb
-      format.json { render json: @product }
+
+    format.html # show.html.erb
+    format.json { render json: @product }
     end
   end
 
@@ -59,13 +54,12 @@ class ProductsController < ApplicationController
   def update
   	@product = Product.find(params[:id])
 
-<<<<<<< HEAD
   	if @product.update_attributes(product_params)
   		redirect_to product_path(@product)
   	else
   		render	:edit
   	end
-=======
+
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -75,7 +69,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
->>>>>>> master
+
   end
 
   def destroy
