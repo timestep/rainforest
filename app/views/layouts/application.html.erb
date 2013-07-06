@@ -13,7 +13,8 @@
 		<% if flash[:alert] %>
 			<p id='alert'><%= flash[:alert] %></p>
 		<% end %>
-
+		
+		<%= link_to "Home", root_path %>
 		<%= yield %>
 			
 		<p class="userinfo">
