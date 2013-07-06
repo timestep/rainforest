@@ -32,16 +32,16 @@
   <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
 <% end %>
 
-			
+<% if current_user %>
 	<h3>Reviews</h3>
 	<p>Reviews for <%= @product.name %></p>
-	<% @product.review.each do |review| %>
+	<% @product.review.each do |r| %>
 		<p>
-			<%= review.comment %>
+			<%= r.comment %>
 			<br>
-			<% if review.user !=nil %> 
-			<em> by <%= review.user.email %> </em>
-			Added on: <%= review.created_at %>
+			<% if r.user !=nil %> 
+			<em> by <%= r.user.email %> </em>
+			Added on: <%= r.created_at %>
 			<% end %>
 		</p>
 	<%end%>
