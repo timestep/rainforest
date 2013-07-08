@@ -17,6 +17,7 @@
 							<a href="/products/new">Add a New Product!</a>
 						</li>
 					</ul>
+					<div class="userinfo">
 					<ul class="nav pull-right">
 						<% if current_user %>
 							<li>
@@ -34,22 +35,25 @@
 		  				</li>
 						<% end %>
 					</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="container" style="padding-top: 80px">
 			<% if flash[:notice] %>
-				<p id='notice'><%= flash[:notice]%></p>
-				<% end %>
-				<% if flash[:alert] %>
+				<div class="alert alert-block">
+					<!-- <a class="close">x</a>			 -->
+					<p id='notice'><%= flash[:notice]%></p>		
+				</div>
+			<% end %>
+			<% if flash[:alert] %>
+				<div class="alert alert-error">
+					<!-- <a class="close">x</a> -->
+					<strong>Error</strong>
 					<p id='alert'><%= flash[:alert] %></p>
-				<% end %>
-				
-				<%= yield %>
-					
-				<p class="userinfo">
-		   
-			</p>		
+				</div>
+			<% end %>
+			<%= yield %>
 		</div>
 	</body>
 </html>
