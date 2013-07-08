@@ -13,13 +13,14 @@
 	</thead>
 	<tbody>
 		<% @products.each do |p| %>
-		<tr>
-			<th><%=p.id%></th>
-			<th><a href="/products/<%=p.id%>"><%=p.name%></a></th>
-			<th><%=p.description%></th>
-			<th><%=p.formatted_price%></th>
-			<th><a href="/products/<%=p.id%>/edit">Edit</a></th>
-		</tr>
+			<tr>
+				<th><%=p.id%></th>
+				<th><a href="/products/<%=p.id%>"><%=p.name%></a></th>
+				<th><%=p.description%></th>
+				<th><%=p.formatted_price%></th>
+				<th><a href="/products/<%=p.id%>/edit">Edit</a></th>
+				<th><%= link_to("Destroy", "/products/<%=p.id%>",method: :delete) %></th>
+			</tr>
 		<% end %>
 	</tbody>
 </table>
