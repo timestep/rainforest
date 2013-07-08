@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if current_user
-      @review = @product.reviews
+      @review = @product.reviews.build
     end
 
     respond_to do |format|

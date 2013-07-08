@@ -15,11 +15,13 @@
 		<% @products.each do |p| %>
 			<tr>
 				<th><%=p.id%></th>
-				<th><a href="/products/<%=p.id%>"><%=p.name%></a></th>
+				<th><%=link_to p.name, product_url(p)%></th>
 				<th><%=p.description%></th>
 				<th><%=p.formatted_price%></th>
-				<th><a href="/products/<%=p.id%>/edit">Edit</a></th>
-				<th><%= link_to("Destroy", "/products/<%=p.id%>",method: :delete) %></th>
+				<% if current_user %>
+					<th><%=link_to 'Edit', edit_product_url(p)%></th>
+					<th><%=link_to 'Destroy', product_url(p), method: :delete%></th>
+				<% end %>
 			</tr>
 		<% end %>
 	</tbody>
