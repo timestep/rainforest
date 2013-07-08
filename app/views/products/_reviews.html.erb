@@ -1,8 +1,7 @@
 <% if current_user %>
 	
-	<h3>Reviews</h3>
-	<p>Reviews for <%= @product.name %></p>
-	<% @review.each do |r| %>
+	<h4>Reviews</h4>
+	<% @product.reviews.each do |r| %>
 		<p>
 			<%= r.comment %>
 			<br>
@@ -13,7 +12,7 @@
 		</p>
 	<%end%>
 	
-	<h4>New Review</h4>
+	<h6>New Review</h6>
 	<%= form_for([@product, @review]) do |f| %>
 		<% if @review.errors.any? %>
 		 	<div id="error_explination">

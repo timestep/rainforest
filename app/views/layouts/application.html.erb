@@ -12,11 +12,13 @@
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="brand" href="../">RainForest</a>
+					<% if current_user %>
 					<ul class="nav">
 						<li>
 							<a href="/products/new">Add a New Product!</a>
 						</li>
 					</ul>
+					<% end %>
 					<div class="userinfo">
 					<ul class="nav pull-right">
 						<% if current_user %>

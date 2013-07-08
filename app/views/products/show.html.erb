@@ -1,45 +1,7 @@
-<h1>Name:<%=@product.name%></h1>
-<p class="lead">Description:<%=@product.description%></p> 
+<h1><%=@product.name%></h1>
+<p class="lead"><%=@product.description%></p> 
 
 <p>Id# <%=@product.id%></p> 
-<p>Price in Dollars:<%=@product.formatted_price%></p> 
+<p>$<%=@product.formatted_price%></p> 
 
-<% if current_user %>
-	
-	<h3>Reviews</h3>
-	<p>Reviews for <%= @product.name %></p>
-	<% @product.reviews.each do |r| %>
-		<p>
-			<%= r.comment %>
-			<br>
-			<% if r.user !=nil %> 
-			<em> by <%= r.user.email %> </em>
-			Added on: <%= r.created_at %>
-			<% end %>
-		</p>
-	<%end%>
-	
-	<h4>New Review</h4>
-	<%= form_for([@product, @review]) do |f| %>
-		<% if @review.errors.any? %>
-		 	<div id="error_explination">
-		 		<h2><%= pluralize(@review.errors.count, 'error')%> prohibited this review from being saved:</h2>
-		 		<ul>
-		 			<% @review.errors.full_messages.each do |msg| %>
-		 				<li><%= msg %></li>
-		 			<%end%>
-		 		</ul>
-		 	</div>
-		<%end%>
-		<div class="field">
-      <%= f.label :comment %>
-      <%= f.text_area :comment %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-
-<% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p> 
-<% end %>
+<%= render 'reviews'%>
