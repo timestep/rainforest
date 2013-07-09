@@ -43,6 +43,7 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+  # gem 'remarkable_rails'
 end
 
 group :doc do

@@ -28,4 +28,10 @@ describe Product do
   	product = FactoryGirl.create(:product)
   	product.formatted_price.should == (product.price_in_cents.to_f/100).to_s
 	end
+
+  it { should have_many(:reviews) }
+  it { should have_many(:users).through(:reviews)}
+
+
+
 end
