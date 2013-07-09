@@ -2,13 +2,6 @@ require 'spec_helper'
 
 describe Product do
 
-  # subject( FactoryGirl.create(:product) ){@product}
-  
- #  it { should respond_to(:description) }
-	# it { should respond_to(:name) }
-	# it { should respond_to(:price_in_cents) }
- #  product.price_in_cents { should be_a(Integer) }
-
   it "has a valid factory" do
     FactoryGirl.create(:product).should be_valid
   end
