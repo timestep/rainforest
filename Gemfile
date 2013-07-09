@@ -31,6 +31,7 @@ group :development, :test	do
 	gem 'rspec-rails'
 	gem 'fuubar'
 	gem 'sqlite3'
+	gem 'shoulda-matchers'
 end
 
 group :production do
