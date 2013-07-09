@@ -25,7 +25,7 @@ describe ProductsController do
       get 'show'
       response.should be_success
     end
-    it {"renders the show view for that product"} do
+    it "renders the show view for that product" do
       product = FactoryGirl.create(:product)
       get :show
       expect(response).to render_template("show")
