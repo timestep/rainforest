@@ -30,4 +30,9 @@ describe Product do
   	FactoryGirl.create(:product, name: "yolo")
   	FactoryGirl.build(:product, name:"yolo").should_not be_valid
   end
+
+  it "returns the price in dollar amount" do
+  	product = FactoryGirl.create(:product)
+  	product.formatted_price.should == (product.price_in_cents.to_f/100).to_s
+	end
 end
