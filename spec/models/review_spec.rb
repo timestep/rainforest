@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Review do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    FactoryGirl.create(:review).should be_valid
+  end
+
+  it "has to have a description" do
+  	FactoryGirl.create(:review, comment: nil ).should_not be_valid
+  end
 end
