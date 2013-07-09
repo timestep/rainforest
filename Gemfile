@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 1.2'
 group :development, :test	do
 	gem 'factory_girl_rails'
 	gem 'rspec-rails'
-	gem 'capybara'
 	gem 'fuubar'
 	gem 'sqlite3'
 end
@@ -37,6 +36,13 @@ end
 group :production do
 	gem 'rails_12factor'
 	gem 'pg'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 group :doc do
