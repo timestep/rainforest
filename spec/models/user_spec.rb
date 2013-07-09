@@ -6,7 +6,7 @@ describe User do
   end
 
   it "has a valid factory" do
-    FactoryGirl.create(:user, name: nil).should_not be_valid
+    FactoryGirl.build(:user, name: nil).should_not be_valid
   end
 
   it { should has_many(:reviews) }
