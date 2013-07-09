@@ -9,7 +9,7 @@ describe User do
     FactoryGirl.build(:user, name: nil).should_not be_valid
   end
 
-  it { should has_many(:reviews) }
-  it { should has_many(:products).through(:reviews) }
+  it { should have_many(:reviews) }
+  it { should have_many(:products).through(:reviews) }
 
 end

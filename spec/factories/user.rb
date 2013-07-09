@@ -3,6 +3,7 @@ require 'faker'
 FactoryGirl.define do
 	factory :user do |f|
 		f.name { Faker::Name.name } 
-		f.password { Faker::Base.bothify('password')}
+		f.password { 'password' }
+		f.password_confirmation { 'password' }
 	end
 end
