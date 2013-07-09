@@ -25,7 +25,7 @@ describe ProductsController do
       get 'show'
       response.should be_success
     end
-    it {"renders the show view for that product"}
+    it {"renders the show view for that product"} do
       product = FactoryGirl.create(:product)
       get :show
       expect(response).to render_template("show")
@@ -42,10 +42,11 @@ describe ProductsController do
       get 'new'
       response.should be_success
     end
-    it "renders the new view"
+    it "renders the new view" do
       get :new
       expect(response.to render_template(:new))
-    it "creates a new Product to @product"
+    end
+    it "creates a new Product to @product" do
       product = FactoryGirl.create(:product)
       get :new
       fill_in "Name", :with => product.name

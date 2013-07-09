@@ -2,20 +2,20 @@ require 'spec_helper'
 
 describe Product do
 
-  it "has a valid factory" do
+   it "has a valid factory" do
     FactoryGirl.create(:product).should be_valid
   end
 
   it "is invalid without name" do
-  	FactoryGirl.create(:product, name: nil).should_not be_valid
+  	FactoryGirl.build(:product, name: nil).should_not be_valid
   end
 
   it "is invalid without price" do
-  	FactoryGirl.create(:product, price_in_cents: nil).should_not be_valid
+  	FactoryGirl.build(:product, price_in_cents: nil).should_not be_valid
   end
 
   it "is valid without description" do
-  	FactoryGirl.create(:product, description: nil).should be_valid
+  	FactoryGirl.build(:product, description: nil).should_not be_valid
   end
 
   it "has uniquness of name" do

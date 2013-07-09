@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-	validates :name, :presence => true
+	validates :name, :description, :presence => true
 	validates :price_in_cents, :numericality => {:only_integer => true}
 	validates :name, uniqueness: true
 	has_many 	:reviews
