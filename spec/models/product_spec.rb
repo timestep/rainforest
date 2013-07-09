@@ -8,20 +8,13 @@ describe Product do
 
   subject( :product ){@product}
   
-  it 'checks valid description' do
-  	should respond_to(:description)
-  	# should be_a(text) 
-	end
-	
+  it { should respond_to(:description) }
+	it { should respond_to(:name) }
+
 	it 'checks if price is valid' do
   	product.price_in_cents.should be_a(Integer)
 	  should respond_to(:price_in_cents)
 	end
 
-	it 'checks if has name' do
-		should respond_to(:name)
-		# @product.name should respond_to(String)
-	end
-	
 
 end

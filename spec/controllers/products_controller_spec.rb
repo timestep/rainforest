@@ -17,7 +17,7 @@ describe ProductsController do
       response.should be_success
     end
     it "assigns the product to @product"
-    it "renders the show view for that product"
+    it {"renders the show view for that product"}
   end
 
   describe "GET 'new'" do
