@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is called RAINFOREST.
 
-Things you may want to cover:
+A low-end Amazon clone, it tracks products created by users and their reviews on said products. 
 
-* Ruby version
+The main page will describe the products listed in the database, with a description and price. A login page and sign up page are accessable on the main page. 
 
-* System dependencies
+User must sign up to access the creation, editing and deletion of products.
 
-* Configuration
+Upon creation of the product, the main page will be updated with the new product.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After completeing the tasks, the user may sign out, or upon closing the browser will terminate the session with the server.
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
